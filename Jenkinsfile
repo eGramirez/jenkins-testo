@@ -1,24 +1,10 @@
 pipeline {
-  agent any
-  stages {
-    stage('ver') {
-      steps {
-        echo 'testing'
-      }
-    }
-    stage('otro') {
-      parallel {
-        stage('otro') {
-          steps {
-            pwd(tmp: true)
-          }
+    agent { docker { image 'maven:3.3.3' } }
+    stages {
+        stage('build') {
+            steps {
+                sh 'mvn --version'
+            }
         }
-        stage('dfdfd') {
-          steps {
-            waitUntil()
-          }
-        }
-      }
     }
-  }
 }

@@ -24,7 +24,7 @@ pipeline {
                 echo 'Deploying....'
             }
         }
-        stage('Example') {
+        stage('Examples') {
             environment { 
                 DEBUG_FLAGS = '-g'
             }

@@ -2,6 +2,14 @@ pipeline {
     agent any
 
     stages {
+        stage('Example') {
+            steps {
+                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+            }
+        }
+    }
+    
+    stages {
         stage('Build') {
             steps {
                 echo 'Building..'
